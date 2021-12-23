@@ -1,7 +1,7 @@
 <div class='columns'>
   <% @posts.each do |post| %>
     <div class='column'>
-      <h1 class='is-large'><%= post.title %></h1><br>
+      <%= post.title %><br>
       <%= post.body %>
     </div>
   <% end %>
