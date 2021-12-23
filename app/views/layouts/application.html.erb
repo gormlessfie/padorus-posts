@@ -11,9 +11,11 @@
   </head>
 
   <body>
-  <% flash.each do |type, msg| %>
-    <%= msg %>
-  <% end %>
+    <%= render 'shared/navbar' %>
+
+    <% flash.each do |type, msg| %>
+      <%= msg %>
+    <% end %>
 
     <%= yield %>
   </body>
