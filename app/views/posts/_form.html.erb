@@ -1,12 +1,5 @@
 <div class='container is-widescreen'>
-  <% @post.errors.full_messages do |msg| %>
-    <div class='notice'><%= msg %></div>
-  <% end %>
-</div>
-
-<div class='container is-widescreen'>
   <%= form_with model: [:user, @post] do |form| %>
-
     <div class='field'>
       <%= form.label :title %>
       <%= form.text_field :title, class: 'input is-large' %>

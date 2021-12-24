@@ -20,7 +20,6 @@ class PostsController < ApplicationController
       flash[:success] = 'Post successful.'
       redirect_to root_path
     else
-      flash[:error] = 'Post unsuccessful.'
       render :new
     end
   end
