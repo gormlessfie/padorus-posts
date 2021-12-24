@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MembersOnly</title>
+    <title>Padoru's Posts</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,25 +13,7 @@
   <body>
     <%= render 'shared/navbar' %><br>
 
-    <div class='container' role='notifications'>
-      <% flash.each do |type, msg| %>
-
-        <% case type %>
-        <% when 'notice' %>
-          <div class='notification is-info is-light'>
-            <%= msg %>
-          </div>
-        <% when 'success' %>
-          <div class='notification is-primary is-light'>
-            <%= msg %>
-          </div>
-        <% when 'error' %>
-          <div class='notification is-danger is-light'>
-            <%= msg %>
-          </div>
-        <% end %>
-      <% end %>
-    </div><br>
+    <%= render 'shared/notifications' %><br>
 
     <%= yield %>
   </body>

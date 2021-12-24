@@ -1,12 +1,14 @@
-<div class='content'>
-  <h1><%= @post.title %></h1>
+<div class='container box'>
+  <div class='content'>
+    <h1><%= @post.title %></h1>
 
-  <p><%= @post.body %></p>
-</div>
-
-<% if current_user.id == @post.user.id %>
-  <div class='buttons'>
-    <%= link_to 'Edit post', edit_user_post_path(@post), class:'button is-link' %>
+    <p><%= @post.body %></p>
   </div>
-<% end %>
+
+  <% if current_user.id == @post.user.id %>
+    <div class='buttons'>
+      <%= link_to 'Edit post', edit_user_post_path(@post), class:'button is-link' %>
+    </div>
+  <% end %>
+</div>
 
