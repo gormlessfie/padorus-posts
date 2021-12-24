@@ -1,12 +1,12 @@
 <section class='section'>
   <h1 class='title is-3'>New post</h1><br>
 
-  <% if @post.errors %>
-      <% @post.errors.full_messages.each do |msg| %>
-        <div class='container box has-background-danger-light'>
-          <%= msg %>
-        </div>
-      <% end %>
+  <% if @post.errors.any? %>
+      <div class='container box has-background-danger-light'>
+        <% @post.errors.full_messages.each do |msg| %>
+          <ul><%= msg %></ul><br>
+        <% end %>
+      </div>
   <% end %>
 
   <%= render 'form' %>

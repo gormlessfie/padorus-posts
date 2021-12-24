@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
-  resources :users, only: [:show] do
+  get '/users', to: 'posts#index'
+  resources :users, only: [] do
     resources :posts
   end
 end
