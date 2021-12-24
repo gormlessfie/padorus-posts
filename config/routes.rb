@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   get '/users', to: 'posts#index'
+  
   resources :users, only: [] do
     resources :posts
   end
