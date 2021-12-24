@@ -11,11 +11,15 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' %><br>
 
-    <% flash.each do |type, msg| %>
-      <%= msg %>
-    <% end %>
+    <div class='container' role='notifications'>
+      <% flash.each do |type, msg| %>
+        <div class='notification is-danger is-light'>
+          <%= msg %>
+        </div>
+      <% end %>
+    </div>
 
     <%= yield %>
   </body>
