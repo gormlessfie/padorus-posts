@@ -7,12 +7,14 @@
 
       <div class='field'>
         <%= f.label :username %>
-        <%= f.text_field :username, autofocus: true, autocomplete: 'username', class:'input' %>
+        <%= f.text_field :username, autofocus: true, autocomplete: 'username', 
+                                    class:'input', placeholder: 'e.g. fuwwy123' %>
       </div>
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'input' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                                  class:'input', placeholder: 'e.g. fuwwy123@yehoo.com' %>
       </div>
 
       <div class="field">
