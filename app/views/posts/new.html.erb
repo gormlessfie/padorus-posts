@@ -1,28 +1,6 @@
 <section class='section'>
-  <div class='container is-widescreen'>
-    <% @post.errors.full_messages do |msg| %>
-      <div class='notice'><%= msg %></div>
-    <% end %>
-  </div>
+  <h1 class='title is-3'>New post</h1><br>
 
-  <div class='container is-widescreen'>
-    <%= form_with model: [:user, @post] do |form| %>
-
-      <div class='field'>
-        <%= form.label :title %>
-        <%= form.text_field :title, class: 'input is-large' %>
-      </div>
-
-      <div class='field'>
-        <%= form.label :body %>
-        <%= form.text_area :body, class: 'textarea', rows:'5' %>
-      </div>
-
-      <div class='action'>
-        <%= form.submit 'Post', class: 'button is-primary' %>
-      </div>
-
-    <% end %>
-  </div>
+  <%= render 'form'%>
 </section>
 

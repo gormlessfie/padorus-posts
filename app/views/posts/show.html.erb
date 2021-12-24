@@ -4,3 +4,9 @@
   <p><%= @post.body %></p>
 </div>
 
+<% if current_user.id == @post.user.id %>
+  <div class='buttons'>
+    <%= link_to 'Edit post', edit_user_post_path(@post), class:'button is-link' %>
+  </div>
+<% end %>
+
