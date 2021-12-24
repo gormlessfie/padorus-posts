@@ -7,7 +7,14 @@
 
 <!-- This is the left side of the navbar after the logo -->
   <div class='navbar-start'>
-    <%= link_to 'Padoru Only Posts', root_path, class:'navbar-item title is-3' %>
+    <%= link_to 'Padoru Only Posts', root_path, class: 'navbar-item' %>
+
+    <div class='buttons'>
+      <% if user_signed_in? %>
+        <%= link_to 'Create post', new_user_post_path(current_user), class: 'button is-link' %>
+      <% end %>
+    </div>
+
   </div>
 
 <!-- This is the right side of the nav bar, it contains signup and login buttons -->
