@@ -1,19 +1,23 @@
-<div>
-  <% @posts.each do |post| %>
-    <div class='box'>
-      <h2 class='title is-3'>
-        <%= post.title %>
-      </h2>
+<div class='container'>
+  <div class='columns is-multiline is-mobile'>
+    <% @posts.each do |post| %>
+      <div class='column is-one-quarter'>
+        <div class='box has-background-warning'>
+          <h2 class='title is-3'>
+            <%= post.title %>
+          </h2>
 
-      <% if user_signed_in? %>
-        <p class='subtitle is-5'>by: <%= post.user.username %></p>
-      <% end %>
+          <% if user_signed_in? %>
+            <p class='subtitle is-5'>by: <%= post.user.username %></p>
+          <% end %>
 
-      <p class='subtitle is-6'>
-        <%= post.body %>
-      </p><br>
+          <p class='subtitle is-6'>
+            <%= post.body.slice(0, 50).concat('...') %>
+          </p><br>
 
-      <%= link_to 'read more', user_post_path(post.user, post) %>
-    </div>
-  <% end %>
+          <%= link_to 'read more', user_post_path(post.user, post) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

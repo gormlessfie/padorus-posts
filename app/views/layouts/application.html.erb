@@ -15,11 +15,23 @@
 
     <div class='container' role='notifications'>
       <% flash.each do |type, msg| %>
-        <div class='notification is-danger is-light'>
-          <%= msg %>
-        </div>
+
+        <% case type %>
+        <% when 'notice' %>
+          <div class='notification is-info is-light'>
+            <%= msg %>
+          </div>
+        <% when 'success' %>
+          <div class='notification is-primary is-light'>
+            <%= msg %>
+          </div>
+        <% when 'error' %>
+          <div class='notification is-danger is-light'>
+            <%= msg %>
+          </div>
+        <% end %>
       <% end %>
-    </div>
+    </div><br>
 
     <%= yield %>
   </body>
